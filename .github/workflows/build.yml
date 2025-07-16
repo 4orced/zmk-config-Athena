@@ -36,3 +36,5 @@ jobs:
       - name: Build ZMK for ${{ matrix.shield }}
         run: |
           west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=${{ matrix.shield }}
+
+
