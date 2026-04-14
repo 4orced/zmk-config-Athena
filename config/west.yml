@@ -12,3 +12,8 @@ manifest:
       import: app/west.yml
   self:
     path: config
+
+
+
+# west.yml
+- name: nice-view-gem
