@@ -25,8 +25,4 @@ include:
     shield: corne_right
 
 
-  remote: m165437
-  revision: main
-
-# build.yaml
-shield: corne_left nice_view_adapter nice_view_gem
+ 
