@@ -33,7 +33,7 @@
         test: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp A &kp N3 &kp N2 &kp N2 &kp N0 &kp N4 &kp N2 &kp N0 &kp N7>;
+            bindings = <&kp N3 &kp N2 &kp N2 &kp N0 &kp N4 &kp N2 &kp N0 &kp N7>;
             label = "NEW_MACRO";
         };
     };
