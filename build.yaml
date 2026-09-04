@@ -3,6 +3,7 @@ include:
   # Nordic nRF52840 Dongle - CENTRAL
   - board: nrf52840dongle_nrf52840
     shield: athena_dongle
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=2 -DCONFIG_BT_MAX_CONN=7 -DCONFIG_BT_MAX_PAIRED=7
     artifact-name: athena_dongle
 
   # Corne LEFT - PERIPHERAL
