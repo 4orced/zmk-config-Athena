@@ -1,28 +1,28 @@
-# This file generates the GitHub Actions matrix.
-# For simple board + shield combinations, add them to the top level board and
-# shield arrays, for more control, add individual board + shield combinations
-# to the `include` property. You can also use the `cmake-args` property to
-# pass flags to the build command, `snippet` to add a Zephyr snippet, and
-# `artifact-name` to assign a name to distinguish build outputs from each other:
-#
-# board: [ "nice_nano" ]
-# shield: [ "corne_left", "corne_right" ]
-# include:
-#   - board: bdn9_rev2
-#   - board: nice_nano
-#     shield: reviung41
-#   - board: nice_nano
-#     shield: corne_left
-#     snippet: studio-rpc-usb-uart
-#     cmake-args: -DCONFIG_ZMK_STUDIO=y
-#     artifact-name: corne_left_with_studio
-#
----
 ---
 include:
+  # Nordic nRF52840 Dongle - CENTRAL
+  - board: nrf52840dongle_nrf52840
+    shield: athena_dongle
+    artifact-name: athena_dongle
+
+  # Corne LEFT - PERIPHERAL
   - board: nice_nano_v2
     shield: corne_left nice_view_adapter nice_view_gem
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: athena_left
+
+  # Corne RIGHT - PERIPHERAL
   - board: nice_nano_v2
     shield: corne_right nice_view_adapter nice_view_gem
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: athena_right
+
+  # Reset firmware for both nice!nanos
   - board: nice_nano_v2
     shield: settings_reset
+    artifact-name: nice_nano_settings_reset
+
+  # Reset firmware for Nordic dongle
+  - board: nrf52840dongle_nrf52840
+    shield: settings_reset
+    artifact-name: dongle_settings_reset
